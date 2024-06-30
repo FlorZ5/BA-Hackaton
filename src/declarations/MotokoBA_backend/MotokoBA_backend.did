@@ -1,0 +1,15 @@
+type ClientInfo = 
+ record {
+   apellido: text;
+   contrasena: text;
+   correo: text;
+   direccion: text;
+   nombre: text;
+   telefono: nat64;
+   usuario: text;
+ };
+service : {
+  crearRegistro: (text, text, nat64, text, text, text, text) -> ();
+  getID: () -> (nat32) query;
+  getUser: (text) -> (opt ClientInfo) query;
+}
